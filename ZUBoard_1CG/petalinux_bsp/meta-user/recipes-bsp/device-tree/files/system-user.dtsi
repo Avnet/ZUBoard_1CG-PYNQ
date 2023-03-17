@@ -1,0 +1,86 @@
+/include/ "system-conf.dtsi"
+/ {
+   chosen {
+      bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait";
+      stdout-path = "serial0:115200n8";
+   };
+
+   xlnk {
+      compatible = "xlnx,xlnk-1.0";
+   };
+
+   chosen {
+      xlnx,eeprom= &mac_eeprom;
+   };
+};
+
+//#include "include/dt-bindings/input/input.h"
+//#include "include/dt-bindings/interrupt-controller/irq.h"
+//#include "include/dt-bindings/gpio/gpio.h"
+//#include "include/dt-bindings/pinctrl/pinctrl-zynqmp.h"
+//#include "include/dt-bindings/phy/phy.h"
+
+&gem2 {
+   status = "okay";
+   /* local-mac-address = [00 0a 35 00 02 90]; */
+   phy-mode = "rgmii-id";
+   phy-handle = <&phy0>;
+   phy0: phy@7 {
+      reg = <0x7>;
+   };
+};
+
+/* QSPI partitions are defined with petalinux-config and described in system.conf.dtsi */
+//&qspi { /* MIO 0-5 - U10 */
+//   flash@0 { /* ISSI IS25WP256E */
+//      compatible = "mt25qu256a", "jedec,spi-nor"; /* 32MB */
+//      #address-cells = <1>;
+//      #size-cells = <1>;
+//      reg = <0>;
+//      spi-tx-bus-width = <1>;
+//      spi-rx-bus-width = <4>;
+//      spi-max-frequency = <50000000>; /* 50MHz */
+//   };
+//};
+
+/* SD1 for SD card boot */
+/* SD1 with level shifter */
+/* only supports 3.3V, no level shifter */
+&sdhci1 {
+   status = "okay";
+   no-1-8-v;
+   disable-wp;
+};
+
+// PYNQ doesn't boot up with any device drivers for this,
+//  instead we use Python!
+//&axi_iic_0 {
+//   #address-cells = <1>;
+//   #size-cells = <0>;
+//   clock-frequency = <100000>;
+//
+//   stts22htr: stts22htr@3f {
+//      compatible = "st,stts22h";
+//      reg = <0x3f>;
+//   };
+//};
+
+&spi0 {
+   num-cs = <1>;
+   pressure@00 {
+      compatible = "st,lps22hh";
+      reg = <0>;
+      spi-max-frequency = <100000>;
+   };
+};
+
+&i2c1 {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   /* Ethernet MAC ID EEPROM */
+   mac_eeprom: mac_eeprom@58 { /* U7 */
+      compatible = "atmel,24mac402";
+      reg = <0x58>;
+   };
+};
+
