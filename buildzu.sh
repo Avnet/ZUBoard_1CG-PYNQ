@@ -100,7 +100,6 @@ else
 	make clean
 	make
 	if [ -f "$OVERLAY_NAME.bit" -a -f "$OVERLAY_NAME.hwh" ]; then
-		touch "$OVERLAY_FILE_PATH/$OVERLAY_SEMA_NAME"
 		echo "Status: Overlay build SUCCESS but did not verify timing, manually check build log!"
 	else
 		echo "Status: Overlay build FAILURE"
