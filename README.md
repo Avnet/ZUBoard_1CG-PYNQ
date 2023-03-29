@@ -45,7 +45,7 @@ Retrieve the ZUBoard 1CG PYNQ board git into a new directory somewhere outside t
 Clone the git repo and checkout the `image_v3.0.1` branch.
 
 ```shell
-git clone https://github.com/Avnet/ZUBoard1CG-PYNQ.git --branch image_v3.0.1
+git clone https://github.com/Avnet/ZUBoard_1CG-PYNQ.git --branch image_v3.0.1
 ```
 
 ### Step 4: Build the SD image
@@ -54,7 +54,7 @@ Execute a simple build script that will create an SD image.
 Before executing the script, cd into the previously cloned repo directory.
 
 ```shell
-cd ZUBoard1CG-PYNQ
+cd ZUBoard_1CG-PYNQ
 ./buildzu
 ```
 
