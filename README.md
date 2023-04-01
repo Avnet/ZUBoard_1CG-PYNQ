@@ -55,7 +55,7 @@ Before executing the script, cd into the previously cloned repo directory.
 
 ```shell
 cd ZUBoard_1CG-PYNQ
-./buildzu
+./buildzu.sh
 ```
 
 The build script will first download the PYNQ git repo then a large rootfs, other files and appropriate bsp files. The downloads can take some time.
