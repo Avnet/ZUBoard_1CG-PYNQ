@@ -1,7 +1,7 @@
 ![alt tag](./zuboard-1cg-pynq.png)
 
 # **Grab the pre-built SD images**
-[Click here to obtain the SD card image](http://www.pynq.io/board.html)
+[Click here to obtain the SD card image](http://www.pynq.io/boards.html)
 
 ## Need a little help building your own Vivado ZUBoard 1CG PYNQ Overlays?
 See the ZUBoard_1CG Jupyter Notebooks folder: creating_ZUBoard_1CG_overlays.ipynb
