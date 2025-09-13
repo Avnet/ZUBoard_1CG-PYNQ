@@ -44,3 +44,14 @@ __pycache__/
 ######################
 GNUmakefile
 user.props
+PYNQ-git
+ZUBoard_1CG/ZUBoard_1CGOverlay/ZUBoard_1CGOverlay
+ZUBoard_1CG/ZUBoard_1CGOverlay/bdf
+ZUBoard_1CG/ZUBoard_1CGOverlay/ZUBoard_1CGOverlay.bit
+ZUBoard_1CG/ZUBoard_1CGOverlay/ZUBoard_1CGOverlay.hwh
+ZUBoard_1CG/ZUBoard_1CGOverlay/ZUBoard_1CGOverlay.xsa
+ZUBoard_1CG/ZUBoard_1CGOverlay/vivado.jou
+ZUBoard_1CG/ZUBoard_1CGOverlay/vivado_*.backup.jou
+ZUBoard_1CG/ZUBoard_1CGOverlay/vivado_*.backup.jou
+ZUBoard_1CG/zuboard_1cg.bsp
+ZUBoard_1CG-3.0.1.img

@@ -10,7 +10,9 @@ all: git_bdf block_design bitstream check_timing
 .PHONY: git_bdf
 git_bdf:
 	@if ! [ -f ./bdf/zub1cg/1.0/board.xml ]; then\
-		git clone https://github.com/Avnet/bdf; \
+		git clone https://github.com/Avnet/bdf ;\
+		cd bdf;\
+		git checkout 07b475e;\
 	fi
 
 block_design:
